@@ -32,6 +32,7 @@ namespace ResxEditor
          this.menuStrip1 = new System.Windows.Forms.MenuStrip();
          this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,9 +40,11 @@ namespace ResxEditor
          this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.defaultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-         this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+         this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
          this.menuStrip1.SuspendLayout();
          ( ( System.ComponentModel.ISupportInitialize )( this.dataGridView1 ) ).BeginInit();
+         this.statusStrip1.SuspendLayout();
          this.SuspendLayout();
          // 
          // menuStrip1
@@ -68,14 +71,21 @@ namespace ResxEditor
          // openToolStripMenuItem
          // 
          this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-         this.openToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
+         this.openToolStripMenuItem.Size = new System.Drawing.Size( 111, 22 );
          this.openToolStripMenuItem.Text = "&Open";
          this.openToolStripMenuItem.Click += new System.EventHandler( this.openToolStripMenuItem_Click );
+         // 
+         // saveToolStripMenuItem
+         // 
+         this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+         this.saveToolStripMenuItem.Size = new System.Drawing.Size( 111, 22 );
+         this.saveToolStripMenuItem.Text = "&Save";
+         this.saveToolStripMenuItem.Click += new System.EventHandler( this.saveToolStripMenuItem_Click );
          // 
          // exitToolStripMenuItem
          // 
          this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-         this.exitToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
+         this.exitToolStripMenuItem.Size = new System.Drawing.Size( 111, 22 );
          this.exitToolStripMenuItem.Text = "&Exit";
          this.exitToolStripMenuItem.Click += new System.EventHandler( this.exitToolStripMenuItem_Click );
          // 
@@ -90,8 +100,9 @@ namespace ResxEditor
          // aboutToolStripMenuItem
          // 
          this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-         this.aboutToolStripMenuItem.Size = new System.Drawing.Size( 114, 22 );
+         this.aboutToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
          this.aboutToolStripMenuItem.Text = "About";
+         this.aboutToolStripMenuItem.Click += new System.EventHandler( this.aboutToolStripMenuItem_Click );
          // 
          // dataGridView1
          // 
@@ -134,27 +145,39 @@ namespace ResxEditor
          this.openFileDialog1.Title = "Open file";
          this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler( this.openFileDialog1_FileOk );
          // 
-         // saveToolStripMenuItem
+         // statusStrip1
          // 
-         this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-         this.saveToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
-         this.saveToolStripMenuItem.Text = "&Save";
-         this.saveToolStripMenuItem.Click += new System.EventHandler( this.saveToolStripMenuItem_Click );
+         this.statusStrip1.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1} );
+         this.statusStrip1.Location = new System.Drawing.Point( 0, 278 );
+         this.statusStrip1.Name = "statusStrip1";
+         this.statusStrip1.Size = new System.Drawing.Size( 518, 22 );
+         this.statusStrip1.TabIndex = 2;
+         this.statusStrip1.Text = "statusStrip1";
+         // 
+         // toolStripStatusLabel1
+         // 
+         this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+         this.toolStripStatusLabel1.Size = new System.Drawing.Size( 174, 17 );
+         this.toolStripStatusLabel1.Text = "© 2006 AZ TotaalCommunicatie BV";
          // 
          // Form1
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size( 518, 300 );
+         this.Controls.Add( this.statusStrip1 );
          this.Controls.Add( this.dataGridView1 );
          this.Controls.Add( this.menuStrip1 );
          this.MainMenuStrip = this.menuStrip1;
          this.Name = "Form1";
-         this.Text = "Form1";
+         this.Text = ".NET 2.0 Resource Editor";
          this.Load += new System.EventHandler( this.Form1_Load );
          this.menuStrip1.ResumeLayout( false );
          this.menuStrip1.PerformLayout();
          ( ( System.ComponentModel.ISupportInitialize )( this.dataGridView1 ) ).EndInit();
+         this.statusStrip1.ResumeLayout( false );
+         this.statusStrip1.PerformLayout();
          this.ResumeLayout( false );
          this.PerformLayout();
 
@@ -174,6 +197,8 @@ namespace ResxEditor
       private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
       private System.Windows.Forms.DataGridViewTextBoxColumn defaultDataGridViewTextBoxColumn;
       private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+      private System.Windows.Forms.StatusStrip statusStrip1;
+      private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
    }
 }
 

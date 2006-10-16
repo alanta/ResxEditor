@@ -12,16 +12,41 @@ namespace ResxEditor
 {
    public partial class Form1 : Form
    {
-      List<XmlDocument> docs;
       TextResourceCollection resources;
 
-      public Form1()
+      public Form1( string[] args)
       {
          resources = null;
          InitializeComponent();
+         if ( args.Length > 0 )
+         {
+            List<string> files = new List<string>();
+
+            foreach ( string file in args )
+            {
+               if ( File.Exists( file ) )
+               {
+                  files.Add( file );
+               }
+            }
+
+            if ( files.Count > 0 )
+            {
+               LoadFiles( files.ToArray() );
+            }
+            else
+            {
+               dataGridView1.Columns.Clear();
+            }
+         }
       }
 
       private void openFileDialog1_FileOk( object sender, CancelEventArgs e )
+      {
+         LoadFiles( openFileDialog1.FileNames );
+
+      }
+      private void LoadFiles( string[] files )
       {
          dataGridView1.Columns.Clear();
          dataGridView1.AutoGenerateColumns = true;
@@ -29,7 +54,7 @@ namespace ResxEditor
          dataGridView1.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
          dataGridView1.RowTemplate = new DataGridViewRow();
          dataGridView1.AutoResizeColumns( DataGridViewAutoSizeColumnsMode.AllCells | DataGridViewAutoSizeColumnsMode.Fill );
-         resources = new TextResourceCollection( openFileDialog1.FileNames );
+         resources = new TextResourceCollection( files );
          dataGridView1.DataSource = resources;
          foreach ( DataGridViewColumn col in dataGridView1.Columns )
          {
@@ -43,9 +68,7 @@ namespace ResxEditor
                col.FillWeight = 0.5F;
             }
          }
-         
-}
-
+      }
       
 
       private void openToolStripMenuItem_Click( object sender, EventArgs e )
@@ -78,6 +101,12 @@ namespace ResxEditor
          {
             MessageBox.Show( ex.Message, "Unable to save changes", MessageBoxButtons.OK, MessageBoxIcon.Error );
          }
+      }
+
+      private void aboutToolStripMenuItem_Click( object sender, EventArgs e )
+      {
+         AboutBox1 about = new AboutBox1();
+         about.ShowDialog();
       }
 
 
