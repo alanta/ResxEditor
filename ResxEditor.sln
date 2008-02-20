@@ -1,9 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResxEditor", "ResxEditor.csproj", "{885EFD40-79A3-41BB-975B-B59CA656FBF5}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{7397679B-8C2F-45D5-9F08-D947297C4CFB}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ResxEditor Setup", "Setup\Setup.vdproj", "{7397679B-8C2F-45D5-9F08-D947297C4CFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

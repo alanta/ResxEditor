@@ -83,12 +83,27 @@ namespace ResxEditor
 
       private void exitToolStripMenuItem_Click( object sender, EventArgs e )
       {
-         Close();
+         bool cancel = false;
+         if ( resources.IsDirty )
+         {
+            DialogResult result = MessageBox.Show( "You have unsaved changes. Save now?", "Unsaved changes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning );
+            if ( result == DialogResult.Yes )
+            {
+               resources.Save();
+            }
+
+            if ( result == DialogResult.Cancel )
+            {
+               cancel = true;
+            }
+         }
+         if( !cancel )
+            Close();
       }
 
       private void Form1_Load( object sender, EventArgs e )
       {
-
+         
       }
 
       private void saveToolStripMenuItem_Click( object sender, EventArgs e )
