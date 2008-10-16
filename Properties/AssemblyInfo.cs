@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle( "ResxEditor" )]
 [assembly: AssemblyDescription( "Edit multiple .NET resource files files for translations." )]
 [assembly: AssemblyConfiguration( "" )]
-[assembly: AssemblyCompany( "AZ TotaalCommunicatie BV" )]
+[assembly: AssemblyCompany( "Alanta" )]
 [assembly: AssemblyProduct( "ResxEditor" )]
-[assembly: AssemblyCopyright( "Copyright © AZ TotaalCommunicatie BV 2006-2008" )]
+[assembly: AssemblyCopyright( "Copyright © Alanta, The Netherlands 2006-2008" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
@@ -21,5 +21,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion( "1.0.0.1" )]
-[assembly: AssemblyFileVersion( "1.0.0.1" )]
+[assembly: AssemblyVersion( "1.0.2.0" )]
+[assembly: AssemblyFileVersion( "1.0.2.0" )]

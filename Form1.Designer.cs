@@ -28,6 +28,7 @@ namespace ResxEditor
       /// </summary>
       private void InitializeComponent()
       {
+         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager( typeof( Form1 ) );
          System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
          this.menuStrip1 = new System.Windows.Forms.MenuStrip();
          this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,11 +53,8 @@ namespace ResxEditor
          this.menuStrip1.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.helpToolStripMenuItem} );
-         this.menuStrip1.Location = new System.Drawing.Point( 0, 0 );
+         resources.ApplyResources( this.menuStrip1, "menuStrip1" );
          this.menuStrip1.Name = "menuStrip1";
-         this.menuStrip1.Size = new System.Drawing.Size( 518, 24 );
-         this.menuStrip1.TabIndex = 0;
-         this.menuStrip1.Text = "menuStrip1";
          // 
          // fileToolStripMenuItem
          // 
@@ -65,28 +63,24 @@ namespace ResxEditor
             this.saveToolStripMenuItem,
             this.exitToolStripMenuItem} );
          this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-         this.fileToolStripMenuItem.Size = new System.Drawing.Size( 35, 20 );
-         this.fileToolStripMenuItem.Text = "File";
+         resources.ApplyResources( this.fileToolStripMenuItem, "fileToolStripMenuItem" );
          // 
          // openToolStripMenuItem
          // 
          this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-         this.openToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
-         this.openToolStripMenuItem.Text = "&Open";
+         resources.ApplyResources( this.openToolStripMenuItem, "openToolStripMenuItem" );
          this.openToolStripMenuItem.Click += new System.EventHandler( this.openToolStripMenuItem_Click );
          // 
          // saveToolStripMenuItem
          // 
          this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-         this.saveToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
-         this.saveToolStripMenuItem.Text = "&Save";
+         resources.ApplyResources( this.saveToolStripMenuItem, "saveToolStripMenuItem" );
          this.saveToolStripMenuItem.Click += new System.EventHandler( this.saveToolStripMenuItem_Click );
          // 
          // exitToolStripMenuItem
          // 
          this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-         this.exitToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
-         this.exitToolStripMenuItem.Text = "&Exit";
+         resources.ApplyResources( this.exitToolStripMenuItem, "exitToolStripMenuItem" );
          this.exitToolStripMenuItem.Click += new System.EventHandler( this.exitToolStripMenuItem_Click );
          // 
          // helpToolStripMenuItem
@@ -94,14 +88,12 @@ namespace ResxEditor
          this.helpToolStripMenuItem.DropDownItems.AddRange( new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem} );
          this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-         this.helpToolStripMenuItem.Size = new System.Drawing.Size( 40, 20 );
-         this.helpToolStripMenuItem.Text = "Help";
+         resources.ApplyResources( this.helpToolStripMenuItem, "helpToolStripMenuItem" );
          // 
          // aboutToolStripMenuItem
          // 
          this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-         this.aboutToolStripMenuItem.Size = new System.Drawing.Size( 114, 22 );
-         this.aboutToolStripMenuItem.Text = "About";
+         resources.ApplyResources( this.aboutToolStripMenuItem, "aboutToolStripMenuItem" );
          this.aboutToolStripMenuItem.Click += new System.EventHandler( this.aboutToolStripMenuItem_Click );
          // 
          // dataGridView1
@@ -119,60 +111,50 @@ namespace ResxEditor
          dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
          dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
          this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-         this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.dataGridView1.Location = new System.Drawing.Point( 0, 24 );
+         resources.ApplyResources( this.dataGridView1, "dataGridView1" );
          this.dataGridView1.Name = "dataGridView1";
-         this.dataGridView1.Size = new System.Drawing.Size( 518, 276 );
-         this.dataGridView1.TabIndex = 1;
          // 
          // nameDataGridViewTextBoxColumn
          // 
          this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-         this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+         resources.ApplyResources( this.nameDataGridViewTextBoxColumn, "nameDataGridViewTextBoxColumn" );
          this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
          // 
          // defaultDataGridViewTextBoxColumn
          // 
          this.defaultDataGridViewTextBoxColumn.DataPropertyName = "Default";
-         this.defaultDataGridViewTextBoxColumn.HeaderText = "Default";
+         resources.ApplyResources( this.defaultDataGridViewTextBoxColumn, "defaultDataGridViewTextBoxColumn" );
          this.defaultDataGridViewTextBoxColumn.Name = "defaultDataGridViewTextBoxColumn";
          // 
          // openFileDialog1
          // 
          this.openFileDialog1.DefaultExt = "resx";
-         this.openFileDialog1.Filter = ".NET Resource Files|*.resx";
+         resources.ApplyResources( this.openFileDialog1, "openFileDialog1" );
          this.openFileDialog1.Multiselect = true;
-         this.openFileDialog1.Title = "Open file";
          this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler( this.openFileDialog1_FileOk );
          // 
          // statusStrip1
          // 
          this.statusStrip1.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1} );
-         this.statusStrip1.Location = new System.Drawing.Point( 0, 278 );
+         resources.ApplyResources( this.statusStrip1, "statusStrip1" );
          this.statusStrip1.Name = "statusStrip1";
-         this.statusStrip1.Size = new System.Drawing.Size( 518, 22 );
-         this.statusStrip1.TabIndex = 2;
-         this.statusStrip1.Text = "statusStrip1";
          // 
          // toolStripStatusLabel1
          // 
          this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-         this.toolStripStatusLabel1.Size = new System.Drawing.Size( 202, 17 );
-         this.toolStripStatusLabel1.Text = "© 2006-2008 AZ TotaalCommunicatie BV";
+         resources.ApplyResources( this.toolStripStatusLabel1, "toolStripStatusLabel1" );
          // 
          // Form1
          // 
-         this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
+         resources.ApplyResources( this, "$this" );
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size( 518, 300 );
          this.Controls.Add( this.statusStrip1 );
          this.Controls.Add( this.dataGridView1 );
          this.Controls.Add( this.menuStrip1 );
          this.MainMenuStrip = this.menuStrip1;
          this.Name = "Form1";
-         this.Text = ".NET 2.0 Resource Editor";
-         this.Load += new System.EventHandler( this.Form1_Load );
+         this.FormClosing += new System.Windows.Forms.FormClosingEventHandler( this.Form_Closing );
          this.menuStrip1.ResumeLayout( false );
          this.menuStrip1.PerformLayout();
          ( ( System.ComponentModel.ISupportInitialize )( this.dataGridView1 ) ).EndInit();
@@ -193,7 +175,7 @@ namespace ResxEditor
       private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
       private System.Windows.Forms.DataGridView dataGridView1;
       private System.Windows.Forms.OpenFileDialog openFileDialog1;
-      private System.Windows.Forms.DataGridViewTextBoxColumn ColName;
+//      private System.Windows.Forms.DataGridViewTextBoxColumn ColName;
       private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
       private System.Windows.Forms.DataGridViewTextBoxColumn defaultDataGridViewTextBoxColumn;
       private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;

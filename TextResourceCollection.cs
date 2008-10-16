@@ -26,15 +26,22 @@ namespace ResxEditor
          foreach ( string cultureId in cultures.Keys )
          {
             string displayName = cultureId;
-            if ( cultureId != "Default" )
+            if ( cultureId == "Default" )
+            {
+               pdc.Insert( 1, new NamedIndexerPropertyDescriptor( cultureId, displayName ) );
+            }
+            else
             {
                displayName = CultureInfo.GetCultureInfo( cultureId ).DisplayName;
+               pdc.Add( new NamedIndexerPropertyDescriptor( cultureId, displayName ) );
             }
-            pdc.Add( new NamedIndexerPropertyDescriptor( cultureId, displayName ) );
+            
          }
 
          // Sort the properties.
          properties = new PropertyDescriptorCollection( pdc.ToArray() );
+
+         isDirty = false; // clear dirty flag
       }
 
       private void LoadFromFiles( string[] fileNames )

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{885EFD40-79A3-41BB-975B-B59CA656FBF5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -58,6 +58,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Help.resx</DependentUpon>
     </Compile>
+    <Compile Include="Help.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Help.nl.resx</DependentUpon>
+    </Compile>
     <Compile Include="NamedIndexerPropertyDescriptor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,9 +70,16 @@
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.nl-NL.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Help.nl.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <SubType>Designer</SubType>
@@ -95,6 +107,16 @@
     </Compile>
     <Compile Include="TextResource.cs" />
     <Compile Include="TextResourceCollection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resx.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\About-131x262.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

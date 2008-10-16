@@ -117,13 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>.NET 2.0 Resource Editor
-
-This tool is designed to help translate and manage text resources for use in .NET 2.0 web applications. Open one or more resource files (at once) to start editing and translating. 
-
-Assume you have a website that uses English as a default language and you'd like to translate the site to Dutch. You'd need two resource files; 'MySite.resx' would be the default file. The second file would be called 'MySite.nl.resx'. Open both files to see both the English and Dutch texts side by side.
-
-During development you can use this tool to keep the resource files in sync. </value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bestand</value>
+  </data>
+  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Opslaan</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Afsluiten</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Over</value>
   </data>
 </root>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>.NET 2.0 Resource Editor
-
-This tool is designed to help translate and manage text resources for use in .NET 2.0 web applications. Open one or more resource files (at once) to start editing and translating. 
-
-Assume you have a website that uses English as a default language and you'd like to translate the site to Dutch. You'd need two resource files; 'MySite.resx' would be the default file. The second file would be called 'MySite.nl.resx'. Open both files to see both the English and Dutch texts side by side.
-
-During development you can use this tool to keep the resource files in sync. </value>
+  <data name="Error_Save_Failed" xml:space="preserve">
+    <value>Uw wijzigingen konen niet worden bewaard.</value>
+  </data>
+  <data name="Warning_Unsaved_Changes" xml:space="preserve">
+    <value>U hebt uw wijzigngen nog niet bewaard, wilt u dat nu doen?</value>
+  </data>
+  <data name="Warning_Unsaved_Changes_Title" xml:space="preserve">
+    <value>Wijzigingen bewaren</value>
   </data>
 </root>

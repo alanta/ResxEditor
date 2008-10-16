@@ -18,6 +18,7 @@ namespace ResxEditor
       {
          resources = null;
          InitializeComponent();
+         dataGridView1.Visible = false;
          if ( args.Length > 0 )
          {
             List<string> files = new List<string>();
@@ -43,11 +44,15 @@ namespace ResxEditor
 
       private void openFileDialog1_FileOk( object sender, CancelEventArgs e )
       {
-         LoadFiles( openFileDialog1.FileNames );
-
+         if ( !WarnUnsavedChanges() )
+         {
+            LoadFiles( openFileDialog1.FileNames );
+         }
       }
+
       private void LoadFiles( string[] files )
       {
+         dataGridView1.Visible = true;
          dataGridView1.Columns.Clear();
          dataGridView1.AutoGenerateColumns = true;
          dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -56,16 +61,20 @@ namespace ResxEditor
          dataGridView1.AutoResizeColumns( DataGridViewAutoSizeColumnsMode.AllCells | DataGridViewAutoSizeColumnsMode.Fill );
          resources = new TextResourceCollection( files );
          dataGridView1.DataSource = resources;
+
+         float fillWeight = ( 1F / (dataGridView1.Columns.Count + 1) );
+
          foreach ( DataGridViewColumn col in dataGridView1.Columns )
          {
             col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             if ( col.Name == "Name" )
             {
-               col.FillWeight = 0.1F;
+               col.FillWeight = fillWeight;
+               col.ReadOnly = true;
             }
             else
             {
-               col.FillWeight = 0.5F;
+               col.FillWeight = fillWeight;
             }
          }
       }
@@ -83,10 +92,17 @@ namespace ResxEditor
 
       private void exitToolStripMenuItem_Click( object sender, EventArgs e )
       {
+         bool cancel = WarnUnsavedChanges();
+         if ( !cancel )
+            Close();
+      }
+
+      private bool WarnUnsavedChanges()
+      {
          bool cancel = false;
-         if ( resources.IsDirty )
+         if ( null != resources && resources.IsDirty )
          {
-            DialogResult result = MessageBox.Show( "You have unsaved changes. Save now?", "Unsaved changes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning );
+            DialogResult result = MessageBox.Show( Help.Warning_Unsaved_Changes, Help.Warning_Unsaved_Changes_Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning );
             if ( result == DialogResult.Yes )
             {
                resources.Save();
@@ -97,13 +113,7 @@ namespace ResxEditor
                cancel = true;
             }
          }
-         if( !cancel )
-            Close();
-      }
-
-      private void Form1_Load( object sender, EventArgs e )
-      {
-         
+         return cancel;
       }
 
       private void saveToolStripMenuItem_Click( object sender, EventArgs e )
@@ -114,7 +124,7 @@ namespace ResxEditor
          }
          catch ( Exception ex )
          {
-            MessageBox.Show( ex.Message, "Unable to save changes", MessageBoxButtons.OK, MessageBoxIcon.Error );
+            MessageBox.Show( ex.Message, Help.Error_Save_Failed, MessageBoxButtons.OK, MessageBoxIcon.Error );
          }
       }
 
@@ -124,8 +134,9 @@ namespace ResxEditor
          about.ShowDialog();
       }
 
-
-
-
+      private void Form_Closing( object sender, FormClosingEventArgs e )
+      {
+         e.Cancel = WarnUnsavedChanges();
+      }
    }
 }

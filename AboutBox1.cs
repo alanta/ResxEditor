@@ -111,5 +111,6 @@ namespace ResxEditor
          }
       }
       #endregion
+
    }
 }
