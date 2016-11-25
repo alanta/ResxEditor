@@ -14,8 +14,8 @@ namespace ResxEditor
    [Serializable()]
    class TextResourceCollection : SortedList< string, TextResource>, ITypedList, IBindingList, ICustomTypeDescriptor
    {
-      public TextResourceCollection( string[] files )
-      {
+      public TextResourceCollection( string[] files ) : base(StringComparer.OrdinalIgnoreCase)
+        {
          LoadFromFiles( files );
          // Prepare custom type info
          List<PropertyDescriptor> pdc = new List<PropertyDescriptor>();
